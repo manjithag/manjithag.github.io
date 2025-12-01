@@ -362,6 +362,12 @@ body {
     font-style: italic;
 }
 
+.timeline-description {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    font-size: 1rem;
+}
+
 .timeline-list {
     list-style: none;
     padding-left: 0;
@@ -544,52 +550,81 @@ body {
     text-decoration: underline;
 }
 
-/* Skills */
-.skills-grid {
+/* Research Interests */
+.interests-summary {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.interest-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.interest-tag {
+    padding: 1rem 2rem;
+    background: white;
+    color: var(--text-primary);
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+}
+
+.interest-tag:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    background: var(--primary-color);
+    color: white;
+}
+
+/* Presentations */
+.presentations-list {
+    max-width: 900px;
+    margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
 }
 
-.skill-category {
+.presentation-item {
     background: white;
     padding: 2rem;
     border-radius: 12px;
     box-shadow: var(--shadow-md);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.skill-category h3 {
-    font-size: 1.2rem;
+.presentation-item:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.presentation-title {
+    font-size: 1.3rem;
     color: var(--text-primary);
-    margin-bottom: 1.5rem;
-    padding-bottom: 0.75rem;
-    border-bottom: 2px solid var(--primary-color);
+    margin-bottom: 1rem;
+    font-weight: 600;
 }
 
-.skill-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
+.presentation-event {
+    color: var(--primary-color);
+    font-style: italic;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
 }
 
-.skill-tag {
-    padding: 0.5rem 1rem;
-    background-color: var(--bg-alt);
-    color: var(--text-primary);
-    border-radius: 20px;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
-}
-
-.skill-tag:hover {
-    background-color: var(--primary-color);
-    color: white;
-    transform: translateY(-2px);
+.presentation-details {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
 }
 
 /* Contact */
 .contact-grid {
-    max-width: 800px;
+    max-width: 600px;
     margin: 0 auto;
 }
 
@@ -601,58 +636,36 @@ body {
     line-height: 1.8;
 }
 
-.contact-details {
-    display: grid;
-    gap: 1.5rem;
+.contact-linkedin {
+    text-align: center;
 }
 
-.contact-item {
-    display: flex;
-    align-items: start;
-    gap: 1.5rem;
-    padding: 1.5rem;
+.linkedin-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem 2.5rem;
     background: white;
+    color: #0077b5;
+    text-decoration: none;
     border-radius: 12px;
     box-shadow: var(--shadow-md);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+    font-weight: 600;
 }
 
-.contact-item:hover {
-    transform: translateX(8px);
-    box-shadow: var(--shadow-lg);
+.linkedin-link:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+    background: #0077b5;
+    color: white;
 }
 
-.contact-icon {
-    width: 28px;
-    height: 28px;
-    color: var(--primary-color);
+.linkedin-icon {
+    width: 32px;
+    height: 32px;
     flex-shrink: 0;
-}
-
-.contact-item div {
-    flex: 1;
-}
-
-.contact-item strong {
-    display: block;
-    color: var(--text-primary);
-    margin-bottom: 0.25rem;
-    font-size: 1rem;
-}
-
-.contact-item a {
-    color: var(--primary-color);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.contact-item a:hover {
-    color: var(--primary-dark);
-    text-decoration: underline;
-}
-
-.contact-item span {
-    color: var(--text-secondary);
 }
 
 /* Footer */
@@ -741,8 +754,13 @@ body {
         gap: 1rem;
     }
 
-    .skills-grid {
-        grid-template-columns: 1fr;
+    .interest-tags {
+        gap: 1rem;
+    }
+
+    .interest-tag {
+        font-size: 1rem;
+        padding: 0.875rem 1.5rem;
     }
 }
 
@@ -765,7 +783,22 @@ body {
 
     .project-card,
     .timeline-content,
-    .info-card {
+    .info-card,
+    .presentation-item {
         padding: 1.5rem;
+    }
+
+    .presentation-title {
+        font-size: 1.1rem;
+    }
+
+    .linkedin-link {
+        padding: 1rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    .linkedin-icon {
+        width: 28px;
+        height: 28px;
     }
 }
